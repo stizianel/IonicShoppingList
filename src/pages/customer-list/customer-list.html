@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Customers
+    </ion-title>
+    <ion-buttons end>
+      <button navPush="AddCustomerPage" ion-button>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+   <ion-list-header>
+     Customers
+   </ion-list-header>
+   <ion-item *ngFor="let customer of customer$ | async"
+    detail-push navPush="EditCustomerPage" [navParams]="{customer: customer}">
+    {{ customer.name }}
+   </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,3 +1,4 @@
+import { CustomerService } from '../services/customer/customer-service';
 import { Storage } from '@ionic/storage/es5/storage';
 import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
 import { FIREBASE_CONFIG } from './firebase.credentials';
@@ -34,6 +35,7 @@ import { Camera } from '@ionic-native/camera';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ShoppingListService,
     ToastService,
+    CustomerService,
     Camera
   ]
 })

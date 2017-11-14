@@ -1,0 +1,34 @@
+<!--
+  Generated template for the EditCustomerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar color="primary">
+      <ion-title>{{customer?.name}}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input [(ngModel)]="customer.name" placeholder="Mario Rossi"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Address</ion-label>
+      <ion-input [(ngModel)]="customer.address"  type="text" placeholder="Via Roma 21"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>City</ion-label>
+      <ion-input [(ngModel)]="customer.city"  type="text" placeholder="Milano"></ion-input>
+    </ion-item>
+  
+    <button ion-button block clear (click)="saveCustomer(customer)">Save</button>
+    <button ion-button block clear color="danger" (click)="removeCustomer(customer)">Delete</button>
+  </ion-content>
