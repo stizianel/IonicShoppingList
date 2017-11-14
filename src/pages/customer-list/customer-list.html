@@ -16,9 +16,15 @@
    <ion-list-header>
      Customers
    </ion-list-header>
-   <ion-item *ngFor="let customer of customer$ | async"
-    detail-push navPush="EditCustomerPage" [navParams]="{customer: customer}">
+   <ion-item *ngFor="let customer of customer$ | async">
     {{ customer.name }}
+    <button ion-button outline item-end icon-left navPush="AddVisitPage" [navParams]="{customer: customer}">
+      <ion-icon name="star"></ion-icon>
+      Visita
+    </button>
+    <button ion-button icon-only item-end navPush="EditCustomerPage" [navParams]="{customer: customer}">
+      <ion-icon name="home"></ion-icon>
+    </button>
    </ion-item>
   </ion-list>
-</ion-content>
+</ion-content> 

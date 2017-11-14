@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Customer } from '../../models/customer/customer.model';
+import { Visit } from '../../models/visit/visit.model';
 
 @Injectable()
 export class CustomerService {
+
     private customerRef = this.db.list<Customer>('customer');
+    //private uid: string;
+    //private visitRef = this.db.list(`customer/${this.uid}/visit`);
 
     constructor(private db: AngularFireDatabase) {
         
@@ -14,16 +18,21 @@ export class CustomerService {
         return this.customerRef;
     }
 
-    addCustomer(item: Customer) {
-        return this.customerRef.push(item);
+    addCustomer(customer: Customer) {
+        return this.customerRef.push(customer);
     }
 
-    editCustomer(item: Customer) {
-        return this.customerRef.update(item.key, item);
+    editCustomer(customer: Customer) {
+        return this.customerRef.update(customer.key, customer);
     }
 
-    removeCustomer(item: Customer) {
-        return this.customerRef.remove(item.key);
+    removeCustomer(customer: Customer) {
+        return this.customerRef.remove(customer.key);
     }
 
+    addCustomerVisit(visit: Visit, customer: Customer) {
+        const uid = customer.key;
+        const list = this.db.list(`customer/${uid}/visits`);
+        return list.push(visit);
+    }
 }
