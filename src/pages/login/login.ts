@@ -1,5 +1,5 @@
-import { resetFakeAsyncZone } from '@angular/core/testing';
-import { concat } from 'rxjs/operator/concat';
+//import { resetFakeAsyncZone } from '@angular/core/testing';
+//import { concat } from 'rxjs/operator/concat';
 import { User } from '../../models/user/user';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';

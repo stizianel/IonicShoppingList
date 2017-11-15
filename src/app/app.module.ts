@@ -1,5 +1,5 @@
 import { CustomerService } from '../services/customer/customer-service';
-import { Storage } from '@ionic/storage/es5/storage';
+//import { Storage } from '@ionic/storage/es5/storage';
 import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { BrowserModule } from '@angular/platform-browser';
